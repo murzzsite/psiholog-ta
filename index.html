@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Психолог, транзактный анализ — консультации для взрослых и пар</title>
+<meta name="description" content="Индивидуальные консультации и консультации для пар в транзактном анализе: разбираем, как вы общаетесь с собой и с близкими. Консультация 3 500 ₽, пара 7 000 ₽.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='12' r='11' fill='%2314594F'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%232F6E9E'/%3E%3Ccircle cx='32' cy='52' r='11' fill='%23E5336F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 64 64">
+    <circle cx="32" cy="11" r="10" fill="var(--parent)"/>
+    <circle cx="32" cy="32" r="10" fill="var(--adult)"/>
+    <circle cx="32" cy="53" r="10" fill="var(--child)"/>
+  </symbol>
+</svg>
+
+<header class="header" id="header">
+  <div class="header__inner">
+    <a class="brand" href="#top" aria-label="Психолог ТА — на главную">
+      <svg class="brand__mark" width="28" height="28"><use href="#mark"/></svg>
+      <span class="brand__name">Психолог ТА</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Разделы">
+      <a href="#live">Разбор реплики</a>
+      <a href="#topics">С чем приходят</a>
+      <a href="#process">Как проходит</a>
+      <a href="#price">Цены</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a class="btn btn--sm" href="#contact">Записаться</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero__circles" aria-hidden="true">
+    <div class="ego ego--p" data-l="Р"></div>
+    <div class="ego ego--a" data-l="В"></div>
+    <div class="ego ego--c" data-l="Д"></div>
+  </div>
+  <div class="hero__text">
+    <h1 class="hero__title"><span class="line"><span>Психолог,</span></span><span class="line"><span>транзактный анализ</span></span></h1>
+    <p class="hero__lead">Разберём, как вы разговариваете с близкими и с самим собой, и почему одни и те же сценарии повторяются. Для взрослых и для пар.</p>
+    <div class="hero__actions">
+      <a class="btn" href="#contact">Записаться на консультацию</a>
+      <a class="link" href="#live">Попробовать разбор реплики</a>
+    </div>
+    <p class="hero__price">Консультация 3 500 ₽ · консультация пары 7 000 ₽</p>
+  </div>
+</section>
+
+<!-- ===== INTRO ===== -->
+<section class="intro" aria-label="О методе">
+  <p class="intro__text">В разговоре отвечает <span class="thumb"><img src="img/child.jpg" alt="" width="80" height="80" loading="lazy"></span> Ребёнок, <span class="thumb"><img src="img/mother.jpg" alt="" width="80" height="80" loading="lazy"></span> Родитель или Взрослый. Учимся слышать, кто говорит, <span class="thumb"><img src="img/chess.jpg" alt="" width="80" height="80" loading="lazy"></span> и отвечать осознанно.</p>
+</section>
+
+<!-- ===== LIVE: разбор реплики ===== -->
+<section class="live" id="live" aria-labelledby="live-h">
+  <div class="live__head" data-rg>
+    <h2 id="live-h" data-r>Разберите реплику</h2>
+    <p data-r>Эрик Берн назвал обмен репликами транзакцией. Выберите ситуацию и ответ, и увидите, из какого состояния говорит каждый и куда летит реплика.</p>
+  </div>
+
+  <div class="live__body">
+    <div class="live__controls">
+      <div class="pick" role="group" aria-labelledby="pick-s">
+        <p class="pick__label" id="pick-s">Ситуация</p>
+        <div class="pick__row" id="situations"></div>
+      </div>
+      <div class="pick" role="group" aria-labelledby="pick-r">
+        <p class="pick__label" id="pick-r">Ответ</p>
+        <div class="pick__col" id="replies"></div>
+      </div>
+    </div>
+
+    <div class="live__stage">
+      <div class="phrase" aria-live="polite">
+        <p class="phrase__who" id="who1">Реплика</p>
+        <p class="phrase__text" id="stim"></p>
+      </div>
+      <svg class="tx" id="tx" viewBox="0 0 640 380" role="img" aria-label="Схема транзакции между двумя людьми: Родитель, Взрослый, Ребёнок у каждого">
+        <defs>
+          <marker id="ah1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--child)"/></marker>
+          <marker id="ah2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--ink)"/></marker>
+        </defs>
+        <g id="txCircles"></g>
+        <path id="arrStim" class="arrow arrow--stim" marker-end="url(#ah1)" d=""/>
+        <path id="arrResp" class="arrow arrow--resp" marker-end="url(#ah2)" d=""/>
+        <text class="tx__who" x="110" y="374" text-anchor="middle">Вы</text>
+        <text class="tx__who" x="530" y="374" text-anchor="middle">Собеседник</text>
+      </svg>
+      <div class="legend" aria-hidden="true">
+        <span><i class="k k--stim"></i>реплика</span>
+        <span><i class="k k--resp"></i>ответ</span>
+      </div>
+      <div class="verdict" aria-live="polite">
+        <p class="verdict__type" id="vtype"></p>
+        <p class="verdict__text" id="vtext"></p>
+      </div>
+      <p class="live__note">Учебная схема, не диагноз: в жизни за одной фразой стоит больше, чем видно на рисунке.</p>
+    </div>
+  </div>
+  <noscript><p class="live__noscript">Пример: «Сколько можно говорить, убирай за собой!» — реплика Родителя Ребёнку. Ответ «Хорошо, сейчас уберу» продолжит разговор по тому же маршруту, а ответ «Давай обсудим, как нам удобнее делить дела» из Взрослого его изменит. Включите JavaScript, чтобы разобрать остальные ситуации.</p></noscript>
+</section>
+
+<!-- ===== TOPICS ===== -->
+<section class="topics" id="topics" aria-labelledby="topics-h">
+  <div class="topics__head">
+    <h2 id="topics-h" data-r>С чем приходят</h2>
+    <p data-r>Запрос не обязан звучать по-научному. Достаточно знать, что в какой-то момент стало тесно.</p>
+  </div>
+
+  <div class="topics__grid">
+    <div class="topics__lists">
+      <div class="cat" data-rg>
+        <div class="cat__head" data-r><h3>В отношениях</h3><span>4 темы</span></div>
+        <ul class="menu">
+          <li class="row" data-img="chess" tabindex="0" data-r>
+            <span class="bul bul--c"></span>
+            <div><b>Одни и те же ссоры</b><p>Разговор идёт по кругу, финал известен заранее, а повод каждый раз новый.</p></div>
+          </li>
+          <li class="row" data-img="mother" tabindex="0" data-r>
+            <span class="bul bul--p"></span>
+            <div><b>Сложно с родителями</b><p>Взрослая жизнь, а рядом с мамой или папой снова ощущение «мне десять».</p></div>
+          </li>
+          <li class="row" data-img="stage" tabindex="0" data-r>
+            <span class="bul bul--a"></span>
+            <div><b>Кризис в паре</b><p>Разбираем, кто и из какой роли говорит, и что каждый хочет услышать на самом деле.</p></div>
+          </li>
+          <li class="row" data-img="child" tabindex="0" data-r>
+            <span class="bul bul--c"></span>
+            <div><b>Трудно просить и отказывать</b><p>«Неудобно», «обижусь» и «вдруг подумают» решают за вас.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="cat" data-rg>
+        <div class="cat__head" data-r><h3>С собой</h3><span>4 темы</span></div>
+        <ul class="menu">
+          <li class="row" data-img="mother" tabindex="0" data-r>
+            <span class="bul bul--p"></span>
+            <div><b>Внутренний критик</b><p>Голос «надо» и «как не стыдно» звучит громче ваших собственных желаний.</p></div>
+          </li>
+          <li class="row" data-img="stage" tabindex="0" data-r>
+            <span class="bul bul--a"></span>
+            <div><b>Сценарий, который повторяется</b><p>Похожие отношения, похожая работа, похожий финал. Ищем, откуда этот сюжет.</p></div>
+          </li>
+          <li class="row" data-img="child" tabindex="0" data-r>
+            <span class="bul bul--c"></span>
+            <div><b>Усталость от роли «сильного»</b><p>Тянете всё сами и не помните, когда последний раз просили о помощи.</p></div>
+          </li>
+          <li class="row" data-img="chess" tabindex="0" data-r>
+            <span class="bul bul--a"></span>
+            <div><b>Выбор и решения</b><p>Взвешивать можно бесконечно. Учимся отличать расчёт Взрослого от страха Ребёнка.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <aside class="preview" aria-hidden="true">
+      <div class="preview__frame">
+        <img class="preview__img is-on" data-key="chess" src="img/chess.jpg" alt="" width="1100" height="869" loading="lazy">
+        <img class="preview__img" data-key="mother" src="img/mother.jpg" alt="" width="900" height="1070" loading="lazy">
+        <img class="preview__img" data-key="stage" src="img/stage.jpg" alt="" width="1100" height="743" loading="lazy">
+        <img class="preview__img" data-key="child" src="img/child.jpg" alt="" width="800" height="1060" loading="lazy">
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process" id="process" aria-labelledby="process-h">
+  <div class="process__head" data-rg>
+    <h2 id="process-h" data-r>Как проходит работа</h2>
+    <p data-r>Транзактный анализ строится на контракте: вы сами формулируете, что хотите изменить, и мы вместе проверяем, что это получается.</p>
+  </div>
+  <div class="acc" id="acc">
+    <article class="acc__p is-open" data-i="0" tabindex="0" aria-expanded="true">
+      <h3>Знакомство</h3>
+      <p>Вы рассказываете, что привело. Без подготовки и «правильных» слов. Я задаю вопросы, а вы смотрите, подходит ли вам такой формат разговора.</p>
+    </article>
+    <article class="acc__p" data-i="1" tabindex="0" aria-expanded="false">
+      <h3>Контракт</h3>
+      <p>Договариваемся о цели: что именно изменится в вашей жизни, по каким признакам вы это заметите и сколько встреч для этого может понадобиться.</p>
+    </article>
+    <article class="acc__p" data-i="2" tabindex="0" aria-expanded="false">
+      <h3>Работа</h3>
+      <p>Разбираем реальные ситуации: из какого состояния вы реагируете, в какие «игры» попадаете, откуда берётся сценарий. Между встречами обычно есть небольшие наблюдения.</p>
+    </article>
+    <article class="acc__p" data-i="3" tabindex="0" aria-expanded="false">
+      <h3>Закрепление</h3>
+      <p>Проверяем контракт: что получилось, что осталось. Если цель достигнута, завершаем. Если появилась новая, оформляем новый контракт.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ===== PRICE ===== -->
+<section class="price" id="price" aria-labelledby="price-h">
+  <h2 id="price-h" class="sr-only">Цены</h2>
+  <div class="plan plan--one">
+    <h3>Консультация</h3>
+    <p class="plan__who">Для одного человека: личный запрос, отношения, сценарии.</p>
+    <p class="plan__text">Включает разговор о вашем запросе, разбор ситуаций в логике транзактного анализа и договорённость о следующем шаге. Формат и длительность уточняются при записи.</p>
+    <div class="plan__foot">
+      <p class="plan__price"><span data-count="3500">3 500</span><small>₽ за консультацию</small></p>
+      <a class="btn btn--light" href="#contact" data-plan="Консультация">Записаться</a>
+    </div>
+  </div>
+  <div class="plan plan--two">
+    <h3>Консультация пары</h3>
+    <p class="plan__who">Для двоих: когда ссоры повторяются, а выйти из круга пока не получается.</p>
+    <p class="plan__text">Оба партнёра говорят и слушают по очереди, я слежу за тем, чтобы разговор не скатывался в обмен упрёками. Смотрим, из каких состояний вы обращаетесь друг к другу и что можно изменить уже на этой неделе.</p>
+    <div class="plan__foot">
+      <p class="plan__price"><span data-count="7000">7 000</span><small>₽ за консультацию пары</small></p>
+      <a class="btn btn--light" href="#contact" data-plan="Консультация пары">Записаться</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about" aria-labelledby="about-h">
+  <div class="about__panel">
+    <h2 id="about-h" class="about__title">Работаю в транзактном анализе</h2>
+    <div class="about__cols">
+      <div>
+        <h3>Подход</h3>
+        <p>Не даю советов «как правильно» и не ставлю диагнозов. Помогаю увидеть, как устроены ваши реакции, и вернуть выбор там, где сейчас срабатывает привычка.</p>
+      </div>
+      <div>
+        <h3>Образование</h3>
+        <p>Диплом и обучение по транзактному анализу покажу на первой встрече: спрашивайте о них прямо, это нормальная часть знакомства.</p>
+      </div>
+      <a class="btn" href="#contact">Записаться</a>
+    </div>
+    <div class="about__pic">
+      <img src="img/chess.jpg" alt="Картина Софонисбы Ангуиссолы «Шахматная партия», 1555: три сестры и служанка вокруг шахматной доски" width="1100" height="869" loading="lazy">
+      <p>Шахматная партия, 1555. Берн называл «играми» повторяющиеся обмены между людьми.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h" class="faq__title">Частые вопросы</h2>
+  <div class="faq__list">
+    <details name="faq"><summary>Что такое транзактный анализ?</summary><p>Подход Эрика Берна: в любом разговоре мы говорим из одного из трёх состояний, Родителя, Взрослого или Ребёнка. Если видно, из какого, проще менять привычные, но неудобные реакции.</p></details>
+    <details name="faq"><summary>Это психотерапия?</summary><p>Это психологическое консультирование. Оно не заменяет лечение у врача: если нужна медицинская помощь, я скажу об этом прямо.</p></details>
+    <details name="faq"><summary>Сколько встреч понадобится?</summary><p>Заранее не обещаю. Число встреч зависит от запроса, и мы оговариваем его в контракте. Часто стоит начать с одной консультации и посмотреть, как вам.</p></details>
+    <details name="faq"><summary>Нужно ли приходить вдвоём с партнёром?</summary><p>Для консультации пары нужны оба. Если партнёр пока не готов, можно начать одному: изменения в вашей части общения тоже влияют на пару.</p></details>
+    <details name="faq"><summary>Что будет с тем, что я расскажу?</summary><p>Содержание консультаций конфиденциально. Исключения возможны только там, где закон или угроза жизни требуют иного, и об этом я скажу заранее.</p></details>
+    <details name="faq"><summary>Если мне плохо прямо сейчас?</summary><p>Консультация не служба экстренной помощи. При угрозе жизни звоните 112. Если нужна поддержка в острой ситуации, обратитесь на горячую линию или к врачу.</p></details>
+    <details name="faq"><summary>Как записаться и оплатить?</summary><p>Оставьте заявку в форме ниже: напишу, чтобы согласовать время и формат. Оплату обсудим при записи.</p></details>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <form class="coupon" id="leadForm" novalidate>
+    <div class="coupon__l">
+      <h2 id="contact-h">Запишитесь на консультацию</h2>
+      <p>Оставьте имя и телефон, напишу, чтобы согласовать время. Чем короче опишете запрос, тем лучше, достаточно одной фразы.</p>
+    </div>
+    <div class="coupon__r">
+      <label class="sr-only" for="f-name">Имя</label>
+      <input id="f-name" name="name" type="text" placeholder="Как к вам обращаться" autocomplete="given-name" required>
+      <label class="sr-only" for="f-phone">Телефон</label>
+      <input id="f-phone" name="phone" type="tel" placeholder="Телефон" autocomplete="tel" inputmode="tel" required>
+      <label class="sr-only" for="f-plan">Формат</label>
+      <select id="f-plan" name="plan">
+        <option value="Консультация">Консультация, 3 500 ₽</option>
+        <option value="Консультация пары">Консультация пары, 7 000 ₽</option>
+        <option value="Пока не знаю">Пока не знаю</option>
+      </select>
+      <label class="sr-only" for="f-msg">Запрос</label>
+      <textarea id="f-msg" name="message" rows="2" placeholder="Что беспокоит (по желанию)"></textarea>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <label class="consent"><input type="checkbox" name="consent" required><span>Даю согласие на обработку данных, <a href="privacy.html" target="_blank" rel="noopener">политика конфиденциальности</a></span></label>
+      <button class="submit" type="submit">Отправить заявку</button>
+      <p class="form__status" id="formStatus" role="status"></p>
+    </div>
+  </form>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__mark" id="footerMark">
+    <div class="fm fm--p" data-l="Р"><em>Родитель</em></div>
+    <div class="fm fm--a" data-l="В"><em>Взрослый</em></div>
+    <div class="fm fm--c" data-l="Д"><em>Ребёнок</em></div>
+  </div>
+  <div class="footer__cols">
+    <nav class="footer__nav" aria-label="Нижнее меню">
+      <a href="#live">Разбор реплики</a>
+      <a href="#topics">С чем приходят</a>
+      <a href="#process">Как проходит</a>
+      <a href="#price">Цены</a>
+      <a href="#faq">Вопросы</a>
+      <a href="privacy.html">Конфиденциальность</a>
+    </nav>
+    <p class="footer__note">Консультация не заменяет медицинскую помощь. При угрозе жизни звоните 112.</p>
+  </div>
+  <div class="footer__last">
+    <p>© <span id="year">2026</span> Психолог ТА</p>
+    <a class="btn btn--sm" href="#top">Наверх</a>
+  </div>
+  <p class="credits">Иллюстрации: <a href="https://commons.wikimedia.org/wiki/File:The_Chess_Game_(Sofonisba_Anguissola)_1555_(4096x3236px).jpg">«Шахматная партия»</a>, Софониcба Ангуиссола; <a href="https://commons.wikimedia.org/wiki/File:James_Jebusa_Shannon,_1900_-_Mother_and_child_(Lady_Shannon_and_Kitty).jpg">«Мать и дитя»</a>, Джеймс Шеннон; <a href="https://commons.wikimedia.org/wiki/File:N.E._Lusher_-_Child_With_Toy_Horse,_Bermuda_3010333185.jpg">фото ребёнка с игрушкой</a>, N. E. Lusher; <a href="https://commons.wikimedia.org/wiki/File:Vojt%C4%9Bch_Hynais,_Curtain_of_the_National_Theatre,_Prague.jpg">занавес Национального театра</a>, Войтех Гынайс. Общественное достояние, Wikimedia Commons.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
